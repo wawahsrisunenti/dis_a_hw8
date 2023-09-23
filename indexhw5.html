@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Pendaftaran</title>
+    <title>Formulir Pendaftaran Bansos Album</title>
+    <link rel="icon" href="https://freepngimg.com/download/wings/83449-emoticon-sticker-smiley-wings-bts-free-png-hq.png" type="image/png">
+
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
@@ -14,6 +17,16 @@
             background-size: cover;
             color: #ffffff; /* Warna teks putih */
         }
+
+        /* Mengubah warna font pada kolom list pendaftar menjadi kuning */
+            #pendaftar-list {
+            color: yellow;
+            
+        }
+            #pendaftar-list thead {
+            color: #ffffff !important; /* Memastikan warna teks pada judul kolom tetap putih */
+        }
+
 
         .nav-tabs {
             justify-content: center;
@@ -94,6 +107,10 @@
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+                <li data-target="#myCarousel" data-slide-to="6"></li>
             </ol>
 
             <!-- Slides -->
@@ -106,6 +123,18 @@
                 </div>
                 <div class="carousel-item">
                     <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSny4PnXoYsvn0pbc8QDlr3TEcculK75Px4mbWh8chRwRRcOv4N"alt="Gambar 3" width="225px" height="225px">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcarRs85fsiSefZodfP9YAZBJFEjhg3n4GI_fPbMDgf5D2Msue" alt="Gambar 4" width="225px" height="225px">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBHO3tz3Y96BQKOFAkxCTOZuXW3ZaTf6iNUH-6fa3197cNj8cG"alt="Gambar 5" width="225px" height="225px">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbVtD6jDUGL6iMw5rsggcsHLLSXMYzYvNk_8Y9A27wkFd3ILI5" alt="Gambar 6" width="225px" height="225px">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcThs9Fxr8xY4-vZ248G3bOZ_EiobfDRDDMV8fS8EQPCJO4hvdfz"alt="Gambar 7" width="225px" height="225px">
                 </div>
             </div>
 
@@ -134,7 +163,7 @@
         <div class="tab-content mt-3">
             <!-- Tab Registrasi -->
             <div id="registrasi" class="tab-pane active">
-                <h2>Form Registrasi</h2>
+                <h2>Formulir Registrasi Bansos Album BTS </h2>
                 <form id="registration-form">
                     <div class="form-group">
                         <label for="nama">Nama:</label>
@@ -159,10 +188,10 @@
 
             <!-- Tab List Pendaftar -->
             <div id="list-pendaftar" class="tab-pane fade">
-                <h2>List Pendaftar</h2>
-                <table class="table table-bordered">
+                <h2>List Pendaftar Bansos Album BTS</h2>
+                <table class="table table-bordered" style="color: #ffffff;">
                     <thead>
-                        <tr>
+                        <tr> 
                             <th>Nama</th>
                             <th>Umur</th>
                             <th>Uang Sangu</th>
@@ -172,7 +201,7 @@
                         <!-- Data pendaftar akan ditampilkan di sini -->
                     </tbody>
                 </table>
-                <p>Rata-rata pendaftar memiliki uang sangu sebesar <span id="average-uang-sangu"></span> dengan rata-rata umur <span id="average-umur"></span>.</p>
+                <p>Rata-rata pendaftar memiliki uang sangu sebesar <span id="average-uang-sangu" style="color: red;"></span> dengan rata-rata umur <span id="average-umur" style="color: red;"></span>.</p>
             </div>
         </div>
 
@@ -265,8 +294,8 @@
                 const averageUmurValue = dataPendaftar.length > 0 ? totalUmur / dataPendaftar.length : 0;
                 const averageUangSanguValue = dataPendaftar.length > 0 ? totalUangSangu / dataPendaftar.length : 0;
 
-                averageUmur.textContent = averageUmurValue.toFixed(2);
-                averageUangSangu.textContent = averageUangSanguValue.toFixed(2);
+                averageUmur.textContent = Math.round(averageUmurValue) + ' tahun';
+                averageUangSangu.textContent = formatRupiah(averageUangSanguValue.toFixed(2));
             }
             // Fungsi untuk memformat angka menjadi format Rupiah
                     function formatRupiah(angka) {
@@ -285,6 +314,7 @@
             // Cetak hasilnya
                     return 'Rp ' + rupiah + (split[1] !== undefined ? ',' + split[1] : '');
                     }
+
         });
     </script>
 </body>
