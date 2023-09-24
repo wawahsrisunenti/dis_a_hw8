@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Pendaftaran Bansos Album</title>
     <link rel="icon" href="https://freepngimg.com/download/wings/83449-emoticon-sticker-smiley-wings-bts-free-png-hq.png" type="image/png">
-
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
@@ -99,6 +97,11 @@
     </style>
 </head>
 <body>
+    <div id="loading" class="text-center" style="display: none;">
+    <img src="https://cdn.dribbble.com/users/1152773/screenshots/3832732/loader2.gif" alt="Loading..." width="1000">
+    <p>Loading...</p>
+    </div>
+
     <div class="container mt-5">
         <!-- Carousel -->
         <div id="myCarousel" class="carousel slide mx-auto" data-ride="carousel">
@@ -232,6 +235,7 @@
             const pendaftarList = document.getElementById("pendaftar-list");
             const averageUangSangu = document.getElementById("average-uang-sangu");
             const averageUmur = document.getElementById("average-umur");
+            const loading = document.getElementById("loading"); // Pindahkan elemen loading ke luar event submit
 
             // Ambil elemen jendela dialog pesan kesalahan
             const errorDialog = document.getElementById("error-dialog");
@@ -247,7 +251,9 @@
 
             registrationForm.addEventListener("submit", function (e) {
                 e.preventDefault();
-
+            // Menampilkan elemen loading
+                 loading.style.display = "block";
+            
                 // Dapatkan nilai dari form
                 const nama = document.getElementById("nama").value;
                 const umur = parseInt(document.getElementById("umur").value);
@@ -258,8 +264,11 @@
                     // Tampilkan pesan kesalahan pada dialog pesan kesalahan
                     errorMessage.textContent = "Format Nama kurang dari 10 karakter. Periksa kembali input Anda.";
                     errorDialog.style.display = "block"; // Menampilkan dialog
+
+                // Sembunyikan elemen loading
+                    loading.style.display = "none";
                     return;
-                }
+                    }
 
                 // Tambahkan data pendaftar ke array
                 dataPendaftar.push({ nama, umur, uangSangu });
@@ -272,7 +281,16 @@
 
                 // Hitung rata-rata umur dan uang sangu
                 calculateAverages();
-            });
+                // Tambahkan delay 3 detik sebelum beralih ke tab "List Pendaftar"
+                    setTimeout(function () {
+                        // Sembunyikan elemen loading
+                        loading.style.display = "none";
+
+                        // Beralih ke tab "List Pendaftar"
+                        const listPendaftarTab = document.querySelector('a[data-toggle="tab"][href="#list-pendaftar"]');
+                        listPendaftarTab.click();
+                    }, 3000);
+                });
 
             // Menutup dialog pesan kesalahan ketika tombol "Tutup" diklik
             okButton.addEventListener("click", function () {
