@@ -9,4 +9,5 @@ Table barang {
   harga_barang decimal(10, 2) [not null]
   stok int [not null]
   keterangan text
+  id_kategori int [ref: > kategori_barang.id]
 }
