@@ -1,6 +1,6 @@
 // soal1.js
 
-const geometry = require('./geometry');
+const geometry = require('./modGeometry');
 
 const sisiPersegi = 5;
 console.log(`Luas Persegi dengan sisi ${sisiPersegi} adalah ${geometry.hitungLuasPersegi(sisiPersegi)}`);
