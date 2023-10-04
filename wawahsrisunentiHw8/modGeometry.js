@@ -1,6 +1,6 @@
 module.exports = {
-  hitungLuasPersegi: (sisi) => sisi * sisi,
-  hitungKelilingPersegi: (sisi) => 4 * sisi,
-  hitungLuasPersegiPanjang: (panjang, lebar) => panjang * lebar,
-  hitungKelilingPersegiPanjang: (panjang, lebar) => 2 * (panjang + lebar),
+  calculateSquareArea: (side) => side * side,
+  calculateSquarePerimeter: (side) => 4 * side,
+  calculateRectangleArea: (length, width) => length * width,
+  calculateRectanglePerimeter: (length, width) => 2 * (length + width),
 };
