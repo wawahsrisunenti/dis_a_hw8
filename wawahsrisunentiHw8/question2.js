@@ -1,13 +1,13 @@
-// soal2.js
+// question2.js
 
 const fs = require('fs');
 
-const logData = 'Ini adalah contoh log yang akan ditulis ke dalam file.\n';
+const logData = 'This is an example log that will be written to a file.\n';
 
 fs.writeFile('log.txt', logData, (err) => {
   if (err) {
-    console.error('Gagal menulis file:', err);
+    console.error('Failed to write the file:', err.message);
   } else {
-    console.log('Log telah berhasil ditulis ke dalam file.');
+    console.log('The log has been successfully written to the file.');
   }
 });
