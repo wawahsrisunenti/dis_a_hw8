@@ -1,12 +1,12 @@
-// soal1.js
+// question1.js
 
 const geometry = require('./modGeometry');
 
-const sisiPersegi = 5;
-console.log(`Luas Persegi dengan sisi ${sisiPersegi} adalah ${geometry.hitungLuasPersegi(sisiPersegi)}`);
-console.log(`Keliling Persegi dengan sisi ${sisiPersegi} adalah ${geometry.hitungKelilingPersegi(sisiPersegi)}`);
+const squareSideLength = 5;
+console.log(`The area of a square with side length ${squareSideLength} is ${geometry.calculateSquareArea(squareSideLength)}`);
+console.log(`The perimeter of a square with side length ${squareSideLength} is ${geometry.calculateSquarePerimeter(squareSideLength)}`);
 
-const panjangPersegiPanjang = 6;
-const lebarPersegiPanjang = 4;
-console.log(`Luas Persegi Panjang dengan panjang ${panjangPersegiPanjang} dan lebar ${lebarPersegiPanjang} adalah ${geometry.hitungLuasPersegiPanjang(panjangPersegiPanjang, lebarPersegiPanjang)}`);
-console.log(`Keliling Persegi Panjang dengan panjang ${panjangPersegiPanjang} dan lebar ${lebarPersegiPanjang} adalah ${geometry.hitungKelilingPersegiPanjang(panjangPersegiPanjang, lebarPersegiPanjang)}`);
+const rectangleLength = 6;
+const rectangleWidth = 4;
+console.log(`The area of a rectangle with length ${rectangleLength} and width ${rectangleWidth} is ${geometry.calculateRectangleArea(rectangleLength, rectangleWidth)}`);
+console.log(`The perimeter of a rectangle with length ${rectangleLength} and width ${rectangleWidth} is ${geometry.calculateRectanglePerimeter(rectangleLength, rectangleWidth)}`);
