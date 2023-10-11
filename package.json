@@ -1,0 +1,33 @@
+{
+  "name": "wawahhw8",
+  "version": "1.0.0",
+  "description": "homework in week-8 by Wawah FSWD 5B-3",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "seed": "node db/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wawahsrisunenti/dis_a_homework.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "postgreSQL",
+    "wawah"
+  ],
+  "author": "Wawah Sri Sunenti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wawahsrisunenti/dis_a_homework/issues"
+  },
+  "homepage": "https://github.com/wawahsrisunenti/dis_a_homework#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "pg-pool": "^3.6.1"
+  }
+}

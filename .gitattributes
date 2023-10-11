@@ -1,0 +1,5 @@
+# Mengabaikan perubahan pemformatan baris di berkas JavaScript
+*.js -crlf
+
+# Atur pemformatan baris LF di berkas teks
+*.txt text eol=lf
