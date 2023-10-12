@@ -1,1 +1,0 @@
-This is an example log that will be written to a file.
